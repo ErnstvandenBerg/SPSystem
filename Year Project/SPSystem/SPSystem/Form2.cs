@@ -16,5 +16,10 @@ namespace SPSystem
         {
             InitializeComponent();
         }
+
+        private void Label11_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
