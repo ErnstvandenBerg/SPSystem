@@ -52,6 +52,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.pExit = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.pSpace1.SuspendLayout();
             this.pSpace3.SuspendLayout();
             this.pSpace2.SuspendLayout();
@@ -283,11 +284,21 @@
             this.label12.TabIndex = 0;
             this.label12.Text = "Exit";
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(393, 449);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(84, 13);
+            this.label13.TabIndex = 1;
+            this.label13.Text = "Parking space 6";
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1237, 484);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.pExit);
             this.Controls.Add(this.pEntrance);
             this.Controls.Add(this.pSpace10);
@@ -327,6 +338,7 @@
             this.pExit.ResumeLayout(false);
             this.pExit.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -356,5 +368,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Panel pExit;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
     }
 }
