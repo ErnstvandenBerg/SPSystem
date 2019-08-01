@@ -65,9 +65,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(683, 371);
+            this.button1.Location = new System.Drawing.Point(672, 371);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(107, 30);
+            this.button1.Size = new System.Drawing.Size(118, 30);
             this.button1.TabIndex = 51;
             this.button1.Text = "Refresh";
             this.button1.UseVisualStyleBackColor = true;
