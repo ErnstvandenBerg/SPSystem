@@ -52,7 +52,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.pExit = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.pSpace1.SuspendLayout();
             this.pSpace3.SuspendLayout();
             this.pSpace2.SuspendLayout();
@@ -284,21 +284,22 @@
             this.label12.TabIndex = 0;
             this.label12.Text = "Exit";
             // 
-            // label13
+            // button1
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(393, 449);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(84, 13);
-            this.label13.TabIndex = 1;
-            this.label13.Text = "Parking space 6";
+            this.button1.Location = new System.Drawing.Point(510, 421);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(109, 30);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Simulate Car";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1237, 484);
-            this.Controls.Add(this.label13);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.pExit);
             this.Controls.Add(this.pEntrance);
             this.Controls.Add(this.pSpace10);
@@ -313,6 +314,7 @@
             this.Controls.Add(this.pSpace1);
             this.Name = "Form2";
             this.Text = "Form2";
+            this.Load += new System.EventHandler(this.Form2_Load);
             this.pSpace1.ResumeLayout(false);
             this.pSpace1.PerformLayout();
             this.pSpace3.ResumeLayout(false);
@@ -338,7 +340,6 @@
             this.pExit.ResumeLayout(false);
             this.pExit.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -368,6 +369,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Panel pExit;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button button1;
     }
 }
