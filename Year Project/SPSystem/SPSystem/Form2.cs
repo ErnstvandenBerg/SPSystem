@@ -24,7 +24,7 @@ namespace SPSystem
 
         }
         int[] Parkingspaces = new int[10];
-        
+        Datahandler datahandler = new Datahandler();
         private void Label11_Click(object sender, EventArgs e)
         {
 
@@ -178,6 +178,11 @@ namespace SPSystem
                     }
                     temp++;
                     btnRemove.Enabled = true;
+
+                    string timeIN = DateTime.Now.ToString("MM/dd/yyyy hh:mm tt");
+                    string TimeOUT = DateTime.Now.ToString("MM/dd/yyyy hh:mm tt");
+                    CarSimulation newCar = new CarSimulation(0,timeIN,TimeOUT);
+                    datahandler.Insert(newCar);
                     lblParkingleft.Text = "Parking Spaces Left: " + (10 - temp);
                     MyTimer.Stop();
                 }
@@ -236,6 +241,7 @@ namespace SPSystem
                 }
                 ExitTimer.Start();
                 button1.Enabled = false;
+
                 lblParkingleft.Text = "Parking Spaces Left: " + (10 - temp);
                 pExit.BackColor = Color.ForestGreen;
             }
