@@ -25,6 +25,8 @@ namespace SPSystem
         }
         int[] Parkingspaces = new int[10];
         Datahandler datahandler = new Datahandler();
+        BindingSource binding = new BindingSource();
+        List<CarSimulation> cars = new List<CarSimulation>();
         private void Label11_Click(object sender, EventArgs e)
         {
 
@@ -113,7 +115,8 @@ namespace SPSystem
             MyTimer.Tick += new EventHandler(MyTimer_Tick);
             ExitTimer.Interval = (1000); // 45 mins
             ExitTimer.Tick += new EventHandler(ExitTimer_Tick);
-
+            Form1 form1 = new Form1();
+            form1.Show();
         }
 
         private void ExitTimer_Tick(object sender, EventArgs e)
@@ -178,9 +181,10 @@ namespace SPSystem
                     }
                     temp++;
                     btnRemove.Enabled = true;
-
+                    Random random = new Random();
+                    TimeSpan duration = new TimeSpan(random.Next(0,12),0,0);
                     string timeIN = DateTime.Now.ToString("MM/dd/yyyy hh:mm tt");
-                    string TimeOUT = DateTime.Now.ToString("MM/dd/yyyy hh:mm tt");
+                    string TimeOUT = DateTime.Now.Add(duration).ToString("MM/dd/yyyy hh:mm tt");
                     CarSimulation newCar = new CarSimulation(0,timeIN,TimeOUT);
                     datahandler.Insert(newCar);
                     lblParkingleft.Text = "Parking Spaces Left: " + (10 - temp);

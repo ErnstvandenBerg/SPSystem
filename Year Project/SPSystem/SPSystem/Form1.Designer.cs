@@ -36,12 +36,13 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tboxTotalDuration = new System.Windows.Forms.TextBox();
+            this.tboxTimeOUT = new System.Windows.Forms.TextBox();
+            this.tboxTimeIN = new System.Windows.Forms.TextBox();
+            this.tboxNumberPlate = new System.Windows.Forms.TextBox();
+            this.tboxUser = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.SuspendLayout();
             // 
             // label7
@@ -62,6 +63,7 @@
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(415, 290);
             this.listBox1.TabIndex = 52;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.ListBox1_SelectedIndexChanged);
             // 
             // button1
             // 
@@ -71,6 +73,7 @@
             this.button1.TabIndex = 51;
             this.button1.Text = "Refresh";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // label6
             // 
@@ -122,40 +125,40 @@
             this.label2.TabIndex = 46;
             this.label2.Text = "User:";
             // 
-            // textBox5
+            // tboxTotalDuration
             // 
-            this.textBox5.Location = new System.Drawing.Point(621, 334);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(169, 20);
-            this.textBox5.TabIndex = 45;
+            this.tboxTotalDuration.Location = new System.Drawing.Point(621, 334);
+            this.tboxTotalDuration.Name = "tboxTotalDuration";
+            this.tboxTotalDuration.Size = new System.Drawing.Size(169, 20);
+            this.tboxTotalDuration.TabIndex = 45;
             // 
-            // textBox6
+            // tboxTimeOUT
             // 
-            this.textBox6.Location = new System.Drawing.Point(621, 294);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(169, 20);
-            this.textBox6.TabIndex = 44;
+            this.tboxTimeOUT.Location = new System.Drawing.Point(621, 294);
+            this.tboxTimeOUT.Name = "tboxTimeOUT";
+            this.tboxTimeOUT.Size = new System.Drawing.Size(169, 20);
+            this.tboxTimeOUT.TabIndex = 44;
             // 
-            // textBox3
+            // tboxTimeIN
             // 
-            this.textBox3.Location = new System.Drawing.Point(621, 259);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(169, 20);
-            this.textBox3.TabIndex = 43;
+            this.tboxTimeIN.Location = new System.Drawing.Point(621, 259);
+            this.tboxTimeIN.Name = "tboxTimeIN";
+            this.tboxTimeIN.Size = new System.Drawing.Size(169, 20);
+            this.tboxTimeIN.TabIndex = 43;
             // 
-            // textBox2
+            // tboxNumberPlate
             // 
-            this.textBox2.Location = new System.Drawing.Point(621, 217);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(169, 20);
-            this.textBox2.TabIndex = 42;
+            this.tboxNumberPlate.Location = new System.Drawing.Point(621, 217);
+            this.tboxNumberPlate.Name = "tboxNumberPlate";
+            this.tboxNumberPlate.Size = new System.Drawing.Size(169, 20);
+            this.tboxNumberPlate.TabIndex = 42;
             // 
-            // textBox1
+            // tboxUser
             // 
-            this.textBox1.Location = new System.Drawing.Point(621, 177);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(169, 20);
-            this.textBox1.TabIndex = 41;
+            this.tboxUser.Location = new System.Drawing.Point(621, 177);
+            this.tboxUser.Name = "tboxUser";
+            this.tboxUser.Size = new System.Drawing.Size(169, 20);
+            this.tboxUser.TabIndex = 41;
             // 
             // label1
             // 
@@ -180,14 +183,15 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tboxTotalDuration);
+            this.Controls.Add(this.tboxTimeOUT);
+            this.Controls.Add(this.tboxTimeIN);
+            this.Controls.Add(this.tboxNumberPlate);
+            this.Controls.Add(this.tboxUser);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -203,12 +207,13 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tboxTotalDuration;
+        private System.Windows.Forms.TextBox tboxTimeOUT;
+        private System.Windows.Forms.TextBox tboxTimeIN;
+        private System.Windows.Forms.TextBox tboxNumberPlate;
+        private System.Windows.Forms.TextBox tboxUser;
         private System.Windows.Forms.Label label1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
 
