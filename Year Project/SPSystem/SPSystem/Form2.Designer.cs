@@ -54,6 +54,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
+            this.lblParkingleft = new System.Windows.Forms.Label();
             this.pSpace1.SuspendLayout();
             this.pSpace3.SuspendLayout();
             this.pSpace2.SuspendLayout();
@@ -305,11 +306,21 @@
             this.btnRemove.UseVisualStyleBackColor = true;
             this.btnRemove.Click += new System.EventHandler(this.BtnRemove_Click);
             // 
+            // lblParkingleft
+            // 
+            this.lblParkingleft.AutoSize = true;
+            this.lblParkingleft.Location = new System.Drawing.Point(563, 9);
+            this.lblParkingleft.Name = "lblParkingleft";
+            this.lblParkingleft.Size = new System.Drawing.Size(121, 13);
+            this.lblParkingleft.TabIndex = 10;
+            this.lblParkingleft.Text = "Parking Spaces Left: 10";
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1237, 484);
+            this.Controls.Add(this.lblParkingleft);
             this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pExit);
@@ -352,6 +363,7 @@
             this.pExit.ResumeLayout(false);
             this.pExit.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -383,5 +395,6 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnRemove;
+        private System.Windows.Forms.Label lblParkingleft;
     }
 }

@@ -16,9 +16,26 @@ namespace SPSystem
             set { user = value; }
         }
 
-        public CarSimulation(int user)
+        private string timeIN;
+
+        public string Timein
+        {
+            get { return timeIN; }
+            set { timeIN = value; }
+        }
+        private string timeOUT;
+
+        public string TimeOUT
+        {
+            get { return timeOUT; }
+            set { timeOUT = value; }
+        }
+
+        public CarSimulation(int user, string timeIN, string timeOUT)
         {
             this.user = user;
+            this.timeIN = timeIN;
+            this.timeOUT = timeOUT;
         }
     }
 }

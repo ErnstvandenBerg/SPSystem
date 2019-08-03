@@ -35,9 +35,18 @@ namespace SPSystem
         Timer ExitTimer = new Timer();
         private void Button1_Click(object sender, EventArgs e)
         {
-            pEntrance.BackColor = Color.ForestGreen;
-            MyTimer.Start();
-            btnRemove.Enabled = false;
+            if (Parkingspaces[0] == 1 && Parkingspaces[1] == 1 && Parkingspaces[2] == 1 && Parkingspaces[3] == 1 && Parkingspaces[4] == 1 && Parkingspaces[5] == 1 && Parkingspaces[6] == 1 && Parkingspaces[7] == 1 && Parkingspaces[8] == 1 && Parkingspaces[9] == 1)
+            {
+                MessageBox.Show("Parking lot is full!!!");
+                MyTimer.Stop();
+            }
+            else
+            {
+                pEntrance.BackColor = Color.ForestGreen;
+                MyTimer.Start();
+                btnRemove.Enabled = false;
+            }
+            
 
             //if (Parkingspaces[0] == 1 && Parkingspaces[1] == 1 && Parkingspaces[2] == 1 && Parkingspaces[3] == 1 && Parkingspaces[4] == 1 && Parkingspaces[5] == 1 && Parkingspaces[6] == 1 && Parkingspaces[7] == 1 && Parkingspaces[8] == 1 && Parkingspaces[9] == 1)
             //{
@@ -169,6 +178,7 @@ namespace SPSystem
                     }
                     temp++;
                     btnRemove.Enabled = true;
+                    lblParkingleft.Text = "Parking Spaces Left: " + (10 - temp);
                     MyTimer.Stop();
                 }
                 else
@@ -226,6 +236,7 @@ namespace SPSystem
                 }
                 ExitTimer.Start();
                 button1.Enabled = false;
+                lblParkingleft.Text = "Parking Spaces Left: " + (10 - temp);
                 pExit.BackColor = Color.ForestGreen;
             }
             else
