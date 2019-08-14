@@ -10,7 +10,7 @@ namespace SPSystem
 {
     class Datahandler
     {
-        string connectionstring = @"Data Source=DESKTOP-8ENEMI0;Initial Catalog=SPSystemDB;Integrated Security=True;Pooling=False";
+        string connectionstring = @"Data Source=LAPTOP-LNJG08O0;Initial Catalog=SPSDatabase;Integrated Security=True";
 
         SqlConnection connectionobject = null;
         SqlCommand sqlCommandobject = null;
