@@ -11,7 +11,7 @@ namespace SPSystem
     class Datahandler
     {
         string connectionstring = @"Data Source=LAPTOP-LNJG08O0;Initial Catalog=SPSDatabase;Integrated Security=True";
-        string yes = "";
+
         SqlConnection connectionobject = null;
         SqlCommand sqlCommandobject = null;
         SqlDataReader reader = null;
